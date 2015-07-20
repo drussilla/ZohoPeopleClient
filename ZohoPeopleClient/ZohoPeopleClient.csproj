@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiBase.cs" />
+    <Compile Include="Exceptions\ApiLoginErrorException.cs" />
+    <Compile Include="ResponseBase.cs" />
+    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLog.cs" />
+    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
+    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogApi.cs" />
+    <Compile Include="TimeTrackerApi\TimeTrackerApiGroup.cs" />
+    <Compile Include="ZohoPeopleClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

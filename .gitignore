@@ -1,6 +1,8 @@
 *.suo
 packages/
 ZohoPeopleClient.Test/obj/
-ZohoPeopleClient/obj/
 ZohoPeopleClient.Test/bin/
+ZohoPeopleClient/obj/
 ZohoPeopleClient/bin/
+ZohoPeopleClient.ManualTest/bin/
+ZohoPeopleClient.ManualTest/obj/
