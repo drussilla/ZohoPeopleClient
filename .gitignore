@@ -1,0 +1,6 @@
+*.suo
+packages/
+ZohoPeopleClient.Test/obj/
+ZohoPeopleClient/obj/
+ZohoPeopleClient.Test/bin/
+ZohoPeopleClient/bin/
