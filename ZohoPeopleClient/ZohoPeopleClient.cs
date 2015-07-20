@@ -44,7 +44,6 @@ namespace ZohoPeopleClient
         public void Login(string token)
         {
             this.token = token;
-
             InitializeApi();
         }
 
@@ -53,7 +52,7 @@ namespace ZohoPeopleClient
             timeTracker = new TimeTrackerApiGroup(token);
         }
 
-        public void Login(string login, string password)
+        public string Login(string login, string password)
         {
             var encodedLogin = WebUtility.UrlEncode(login);
             var encodedPassword = WebUtility.UrlEncode(password);
@@ -68,6 +67,9 @@ namespace ZohoPeopleClient
 
                 ParseResult(response);
             }
+
+            InitializeApi();
+            return token;
         }
 
         private void ParseResult(string response)

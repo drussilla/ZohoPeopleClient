@@ -2,6 +2,10 @@
 
 namespace ZohoPeopleClient
 {
+    public class EmptyResponse : ResponseWrapper<string>
+    {
+    }
+
     public abstract class ResponseWrapper<TResult>
     {
         public Response<TResult> Response { get; set; } 

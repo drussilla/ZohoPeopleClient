@@ -26,6 +26,11 @@ namespace ZohoPeopleClient.TimeTrackerApi
             "&billingStatus={4}" +
             "&hours={5}";
 
+        private const string DeleteRequestUrl =
+            "http://people.zoho.com/people/api/timetracker/deletetimelog" +
+            "?authtoken={0}" +
+            "&timeLogId={1}";
+
         //http://people.zoho.com/people/api/timetracker/gettimelogs?authtoken=e456361416f2d38024d1e86c03cd383c&user=ivan.derevyanko%40novility.com&jobId=0&fromDate=2015-07-01&toDate=2015-07-31&billingStatus=all
         public TimeLogApi(string token) : base(token) {}
 
@@ -76,6 +81,22 @@ namespace ZohoPeopleClient.TimeTrackerApi
                 var timeLogResponse = JsonConvert.DeserializeObject<TimeLogAddedResponse>(response);
 
                 return timeLogResponse.Response.Result.First().TimeLogId;
+            }
+        }
+
+        public bool Delete(string timeLogId)
+        {
+            using (var client = new WebClient())
+            {
+                var request = string.Format(
+                    DeleteRequestUrl,
+                    Token,
+                    timeLogId);
+                var response = client.UploadString(request, "POST", "");
+
+                var responseWrapper = JsonConvert.DeserializeObject<EmptyResponse>(response);
+
+                return responseWrapper.Response.Status == 0;
             }
         }
     }

@@ -12,8 +12,12 @@ namespace ZohoPeopleClient.ManualTest
         static void Main(string[] args)
         {
             var client = new ZohoPeopleClient();
-
-            //client.Login("email", "password");
+            
+            // uncomment to use login\password to obtain token
+            //var login = File.ReadAllText("login.txt");
+            //var password = File.ReadAllText("password.txt");
+            //client.Login(login, password);
+            
             var token = File.ReadAllText("token.txt");
             client.Login(token);
 
@@ -28,6 +32,8 @@ namespace ZohoPeopleClient.ManualTest
                 "269998000000314115",
                 TimeSpan.FromHours(8),
                 "non-billable");
+
+            Console.WriteLine(client.TimeTracker.TimeLog.Delete(newLogId));
         }
     }
 }
