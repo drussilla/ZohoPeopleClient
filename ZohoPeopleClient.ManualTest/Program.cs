@@ -14,7 +14,7 @@ namespace ZohoPeopleClient.ManualTest
             var client = new ZohoPeopleClient();
             
             // uncomment to use login\password to obtain token
-            //var login = File.ReadAllText("login.txt");
+            var login = File.ReadAllText("login.txt");
             //var password = File.ReadAllText("password.txt");
             //client.Login(login, password);
             
@@ -22,12 +22,12 @@ namespace ZohoPeopleClient.ManualTest
             client.Login(token);
 
             //var response = client.TimeTracker.TimeLog.Get(
-            //    "email",
+            //    login,
             //    new DateTime(2015, 07, 01),
             //    new DateTime(2015, 07, 20));
 
             var newLogId = client.TimeTracker.TimeLog.Add(
-                "email",
+                login,
                 new DateTime(2015, 07, 30),
                 "269998000000314115",
                 TimeSpan.FromHours(8),
