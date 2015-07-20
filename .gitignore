@@ -6,3 +6,4 @@ ZohoPeopleClient/obj/
 ZohoPeopleClient/bin/
 ZohoPeopleClient.ManualTest/bin/
 ZohoPeopleClient.ManualTest/obj/
+*.user
