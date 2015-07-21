@@ -49,7 +49,7 @@
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogApi.cs" />
     <Compile Include="TimeTrackerApi\TimeTrackerApiGroup.cs" />
-    <Compile Include="ZohoPeopleClient.cs" />
+    <Compile Include="ZohoClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

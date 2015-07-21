@@ -6,7 +6,7 @@ using ZohoPeopleClient.TimeTrackerApi;
 
 namespace ZohoPeopleClient
 {
-    public class ZohoPeopleClient
+    public class ZohoClient
     {
         private const string ApiModeTokenRequestUrl =
             "https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=Zohopeople/peopleapi&EMAIL_ID={0}&PASSWORD={1}";

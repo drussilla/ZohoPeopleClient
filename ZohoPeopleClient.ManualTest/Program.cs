@@ -11,7 +11,7 @@ namespace ZohoPeopleClient.ManualTest
     {
         static void Main(string[] args)
         {
-            var client = new ZohoPeopleClient();
+            var client = new ZohoClient();
             
             // uncomment to use login\password to obtain token
             var login = File.ReadAllText("login.txt");
