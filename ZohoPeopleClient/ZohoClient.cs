@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom;
 using System.Net;
+using System.Threading.Tasks;
 using ZohoPeopleClient.Exceptions;
 using ZohoPeopleClient.TimeTrackerApi;
 
@@ -52,18 +53,20 @@ namespace ZohoPeopleClient
             timeTracker = new TimeTrackerApiGroup(token);
         }
 
-        public string Login(string login, string password)
+        public async Task<string> LoginAsync(string login, string password)
         {
             var encodedLogin = WebUtility.UrlEncode(login);
             var encodedPassword = WebUtility.UrlEncode(password);
 
             using (var webClient = new WebClient())
             {
-                var response = webClient.DownloadString(
-                    string.Format(
-                        ApiModeTokenRequestUrl, 
-                        encodedLogin, 
-                        encodedPassword));
+                var formatedUri = string.Format(
+                    ApiModeTokenRequestUrl,
+                    encodedLogin,
+                    encodedPassword);
+                var uri = new Uri(formatedUri);
+                var response = await webClient.DownloadStringTaskAsync(
+                    uri);
 
                 ParseResult(response);
             }
