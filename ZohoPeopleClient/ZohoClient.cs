@@ -7,7 +7,7 @@ using ZohoPeopleClient.TimeTrackerApi;
 
 namespace ZohoPeopleClient
 {
-    public class ZohoClient
+    public class ZohoClient : IZohoClient
     {
         private const string ApiModeTokenRequestUrl =
             "https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=Zohopeople/peopleapi&EMAIL_ID={0}&PASSWORD={1}";
@@ -48,11 +48,6 @@ namespace ZohoPeopleClient
             InitializeApi();
         }
 
-        private void InitializeApi()
-        {
-            timeTracker = new TimeTrackerApiGroup(token);
-        }
-
         public async Task<string> LoginAsync(string login, string password)
         {
             var encodedLogin = WebUtility.UrlEncode(login);
@@ -73,6 +68,11 @@ namespace ZohoPeopleClient
 
             InitializeApi();
             return token;
+        }
+
+        private void InitializeApi()
+        {
+            timeTracker = new TimeTrackerApiGroup(token);
         }
 
         private void ParseResult(string response)

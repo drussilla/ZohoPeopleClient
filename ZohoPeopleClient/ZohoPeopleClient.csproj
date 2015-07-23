@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ApiBase.cs" />
     <Compile Include="Exceptions\ApiLoginErrorException.cs" />
+    <Compile Include="IZohoClient.cs" />
     <Compile Include="ResponseBase.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLog.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
