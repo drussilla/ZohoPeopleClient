@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace ZohoPeopleClient.TimeTrackerApi
@@ -34,7 +35,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
         //http://people.zoho.com/people/api/timetracker/gettimelogs?authtoken=e456361416f2d38024d1e86c03cd383c&user=ivan.derevyanko%40novility.com&jobId=0&fromDate=2015-07-01&toDate=2015-07-31&billingStatus=all
         public TimeLogApi(string token) : base(token) {}
 
-        public List<TimeLog> Get(
+        public async Task<List<TimeLog>> GetAsync(
             string user,
             DateTime fromDate, 
             DateTime toDate, 
@@ -51,7 +52,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
                     toDate.ToString("yyyy-MM-dd"),
                     WebUtility.UrlEncode(billingStatus),
                     WebUtility.UrlEncode(jobId));
-                var response = client.DownloadString(request);
+                var response = await client.DownloadStringTaskAsync(new Uri(request));
 
                 var timeLogResponse = JsonConvert.DeserializeObject<TimeLogResponse>(response);
 
