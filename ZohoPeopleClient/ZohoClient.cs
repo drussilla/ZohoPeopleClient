@@ -23,7 +23,7 @@ namespace ZohoPeopleClient
 
         private TimeTrackerApiGroup timeTracker;
 
-        public TimeTrackerApiGroup TimeTracker
+        public ITimeTrackerApiGroup TimeTracker
         {
             get
             {

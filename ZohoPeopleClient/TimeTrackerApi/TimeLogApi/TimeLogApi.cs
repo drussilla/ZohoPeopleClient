@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace ZohoPeopleClient.TimeTrackerApi
 {
-    public class TimeLogApi : ApiBase
+    public class TimeLogApi : ApiBase, ITimeLogApi
     {
         private const string GetRequestUrl =
             "http://people.zoho.com/people/api/timetracker/gettimelogs" +

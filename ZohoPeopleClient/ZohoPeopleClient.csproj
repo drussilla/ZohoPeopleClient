@@ -46,6 +46,8 @@
     <Compile Include="Exceptions\ApiLoginErrorException.cs" />
     <Compile Include="IZohoClient.cs" />
     <Compile Include="ResponseBase.cs" />
+    <Compile Include="TimeTrackerApi\ITimeTrackerApiGroup.cs" />
+    <Compile Include="TimeTrackerApi\TimeLogApi\ITimeLogApi.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLog.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogApi.cs" />

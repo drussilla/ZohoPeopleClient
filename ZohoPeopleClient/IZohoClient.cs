@@ -5,7 +5,7 @@ namespace ZohoPeopleClient
 {
     public interface IZohoClient
     {
-        TimeTrackerApiGroup TimeTracker { get; }
+        ITimeTrackerApiGroup TimeTracker { get; }
 
         string GetWebLoginUrl();
 

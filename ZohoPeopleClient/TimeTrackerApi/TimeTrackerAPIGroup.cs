@@ -2,13 +2,13 @@
 
 namespace ZohoPeopleClient.TimeTrackerApi
 {
-    public class TimeTrackerApiGroup
+    public class TimeTrackerApiGroup : ITimeTrackerApiGroup
     {
         internal TimeTrackerApiGroup(string token)
         {
             TimeLog = new TimeLogApi(token);
         }
 
-        public TimeLogApi TimeLog { get; private set; }
+        public ITimeLogApi TimeLog { get; private set; }
     }
 }
