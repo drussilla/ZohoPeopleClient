@@ -33,9 +33,9 @@ namespace ZohoPeopleClient.ManualTest
                 TimeSpan.FromHours(8),
                 "non-billable").Result;
 
-            client.TimeTracker.TimeLog.Delete(newLogId);
+            var isDeleter = client.TimeTracker.TimeLog.DeleteAsync(newLogId).Result;
 
-            Console.WriteLine(newLogId);
+            Console.WriteLine(newLogId + " " + isDeleter);
         }
     }
 }

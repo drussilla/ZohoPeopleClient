@@ -85,7 +85,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             }
         }
 
-        public bool Delete(string timeLogId)
+        public async Task<bool> DeleteAsync(string timeLogId)
         {
             using (var client = new WebClient())
             {
@@ -93,7 +93,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
                     DeleteRequestUrl,
                     Token,
                     timeLogId);
-                var response = client.UploadString(request, "POST", "");
+                var response = await client.UploadStringTaskAsync(request, "POST", "");
 
                 var responseWrapper = JsonConvert.DeserializeObject<EmptyResponse>(response);
 

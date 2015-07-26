@@ -20,6 +20,6 @@ namespace ZohoPeopleClient.TimeTrackerApi
             TimeSpan hours,
             string billingStatus);
 
-        bool Delete(string timeLogId);
+        Task<bool> DeleteAsync(string timeLogId);
     }
 }
