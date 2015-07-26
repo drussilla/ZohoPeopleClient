@@ -9,7 +9,7 @@ namespace ZohoPeopleClient.ManualTest
 {
     class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             var client = new ZohoClient();
             
@@ -26,14 +26,16 @@ namespace ZohoPeopleClient.ManualTest
             //    new DateTime(2015, 07, 01),
             //    new DateTime(2015, 07, 20));
 
-            var newLogId = client.TimeTracker.TimeLog.Add(
-                login,
-                new DateTime(2015, 07, 30),
-                "269998000000314115",
-                TimeSpan.FromHours(8),
-                "non-billable");
+            //var newLogId = client.TimeTracker.TimeLog.Add(
+            //    login,
+            //    new DateTime(2015, 07, 30),
+            //    "269998000000314115",
+            //    TimeSpan.FromHours(8),
+            //    "non-billable");
 
-            Console.WriteLine(client.TimeTracker.TimeLog.Delete(newLogId));
+            var jobs = client.TimeTracker.Jobs.GetAsync().Result;
+
+            Console.WriteLine(jobs.Count);
         }
     }
 }

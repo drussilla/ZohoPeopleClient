@@ -33,7 +33,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             "&timeLogId={1}";
 
         //http://people.zoho.com/people/api/timetracker/gettimelogs?authtoken=e456361416f2d38024d1e86c03cd383c&user=ivan.derevyanko%40novility.com&jobId=0&fromDate=2015-07-01&toDate=2015-07-31&billingStatus=all
-        public TimeLogApi(string token) : base(token) {}
+        internal TimeLogApi(string token) : base(token) {}
 
         public async Task<List<TimeLog>> GetAsync(
             string user,

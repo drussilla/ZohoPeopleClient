@@ -47,6 +47,10 @@
     <Compile Include="IZohoClient.cs" />
     <Compile Include="ResponseBase.cs" />
     <Compile Include="TimeTrackerApi\ITimeTrackerApiGroup.cs" />
+    <Compile Include="TimeTrackerApi\JobsApi\Assignee.cs" />
+    <Compile Include="TimeTrackerApi\JobsApi\IJobsApi.cs" />
+    <Compile Include="TimeTrackerApi\JobsApi\Job.cs" />
+    <Compile Include="TimeTrackerApi\JobsApi\JobsApi.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\ITimeLogApi.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLog.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
@@ -58,6 +62,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
