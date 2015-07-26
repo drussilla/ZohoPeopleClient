@@ -26,16 +26,16 @@ namespace ZohoPeopleClient.ManualTest
             //    new DateTime(2015, 07, 01),
             //    new DateTime(2015, 07, 20));
 
-            //var newLogId = client.TimeTracker.TimeLog.Add(
-            //    login,
-            //    new DateTime(2015, 07, 30),
-            //    "269998000000314115",
-            //    TimeSpan.FromHours(8),
-            //    "non-billable");
+            var newLogId = client.TimeTracker.TimeLog.AddAsync(
+                login,
+                new DateTime(2015, 07, 30),
+                "269998000000314115",
+                TimeSpan.FromHours(8),
+                "non-billable").Result;
 
-            var jobs = client.TimeTracker.Jobs.GetAsync().Result;
+            client.TimeTracker.TimeLog.Delete(newLogId);
 
-            Console.WriteLine(jobs.Count);
+            Console.WriteLine(newLogId);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             string billingStatus = "all",
             string jobId = "all");
 
-        string Add(
+        Task<string> AddAsync(
             string user,
             DateTime workDate,
             string jobId,

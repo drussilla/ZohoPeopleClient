@@ -60,7 +60,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             }
         }
 
-        public string Add(
+        public async Task<string> AddAsync(
             string user,
             DateTime workDate,
             string jobId,
@@ -77,7 +77,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
                     WebUtility.UrlEncode(workDate.ToString("yyyy-MM-dd")),
                     WebUtility.UrlEncode(billingStatus),
                     hours.Hours.ToString("D2") + ":" + hours.Minutes.ToString("D2"));
-                var response = client.UploadString(request, "POST", "");
+                var response = await client.UploadStringTaskAsync(request, "POST", "");
 
                 var timeLogResponse = JsonConvert.DeserializeObject<TimeLogAddedResponse>(response);
 
