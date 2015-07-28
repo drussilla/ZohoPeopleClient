@@ -16,15 +16,15 @@ namespace ZohoPeopleClient.ManualTest
             // uncomment to use login\password to obtain token
             var login = File.ReadAllText("login.txt");
             //var password = File.ReadAllText("password.txt");
-            //client.Login(login, password);
+            //var token = client.LoginAsync(login, password).Result;
             
             var token = File.ReadAllText("token.txt");
             client.Login(token);
 
-            //var response = client.TimeTracker.TimeLog.Get(
+            //var response = client.TimeTracker.TimeLog.GetAsync(
             //    login,
             //    new DateTime(2015, 07, 01),
-            //    new DateTime(2015, 07, 20));
+            //    new DateTime(2015, 07, 20)).Result;
 
             var newLogId = client.TimeTracker.TimeLog.AddAsync(
                 login,

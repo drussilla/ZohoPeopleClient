@@ -1,16 +1,7 @@
 ﻿using System.Collections.Generic;
 
-namespace ZohoPeopleClient
+namespace ZohoPeopleClient.Response
 {
-    public class EmptyResponse : ResponseWrapper<string>
-    {
-    }
-
-    public abstract class ResponseWrapper<TResult>
-    {
-        public Response<TResult> Response { get; set; } 
-    }
-
     public class Response<TResult>
     {
         public string Message { get; set; }

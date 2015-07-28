@@ -1,4 +1,4 @@
-﻿namespace ZohoPeopleClient.TimeTrackerApi.JobsApi
+﻿namespace ZohoPeopleClient.Model.TimeTrackerApi
 {
     public class Assignee
     {

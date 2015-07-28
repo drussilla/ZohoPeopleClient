@@ -42,18 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiBase.cs" />
+    <Compile Include="Infrastructure\ApiBase.cs" />
+    <Compile Include="Infrastructure\IRestClient.cs" />
     <Compile Include="Exceptions\ApiLoginErrorException.cs" />
+    <Compile Include="Infrastructure\RestClient.cs" />
     <Compile Include="IZohoClient.cs" />
-    <Compile Include="ResponseBase.cs" />
+    <Compile Include="Model\TimeTrackerApi\Assignee.cs" />
+    <Compile Include="Model\TimeTrackerApi\Job.cs" />
+    <Compile Include="Response\EmptyResponse.cs" />
+    <Compile Include="Response\ResponseBase.cs" />
+    <Compile Include="Response\ResponseWrapper.cs" />
     <Compile Include="TimeTrackerApi\ITimeTrackerApiGroup.cs" />
-    <Compile Include="TimeTrackerApi\JobsApi\Assignee.cs" />
     <Compile Include="TimeTrackerApi\JobsApi\IJobsApi.cs" />
-    <Compile Include="TimeTrackerApi\JobsApi\Job.cs" />
     <Compile Include="TimeTrackerApi\JobsApi\JobsApi.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\ITimeLogApi.cs" />
-    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLog.cs" />
-    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogAdded.cs" />
+    <Compile Include="Model\TimeTrackerApi\TimeLog.cs" />
+    <Compile Include="Model\TimeTrackerApi\TimeLogAdded.cs" />
     <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogApi.cs" />
     <Compile Include="TimeTrackerApi\TimeTrackerApiGroup.cs" />
     <Compile Include="ZohoClient.cs" />

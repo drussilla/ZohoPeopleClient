@@ -1,13 +1,14 @@
-﻿using ZohoPeopleClient.TimeTrackerApi.JobsApi;
+﻿using System;
+using ZohoPeopleClient.TimeTrackerApi.JobsApi;
 
 namespace ZohoPeopleClient.TimeTrackerApi
 {
     public class TimeTrackerApiGroup : ITimeTrackerApiGroup
     {
-        internal TimeTrackerApiGroup(string token)
+        internal TimeTrackerApiGroup(string token, Func<IRestClient> clientFactory)
         {
-            TimeLog = new TimeLogApi(token);
-            Jobs = new JobsApi.JobsApi(token);
+            TimeLog = new TimeLogApi(token, clientFactory);
+            Jobs = new JobsApi.JobsApi(token, clientFactory);
         }
 
         public ITimeLogApi TimeLog { get; private set; }

@@ -9,6 +9,8 @@ namespace ZohoPeopleClient
 {
     public class ZohoClient : IZohoClient
     {
+        private readonly Func<IRestClient> defaultClientFactory = () => new RestClient();
+
         private const string ApiModeTokenRequestUrl =
             "https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=Zohopeople/peopleapi&EMAIL_ID={0}&PASSWORD={1}";
         
@@ -72,7 +74,7 @@ namespace ZohoPeopleClient
 
         private void InitializeApi()
         {
-            timeTracker = new TimeTrackerApiGroup(token);
+            timeTracker = new TimeTrackerApiGroup(token, defaultClientFactory);
         }
 
         private void ParseResult(string response)

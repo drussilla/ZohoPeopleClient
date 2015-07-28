@@ -1,11 +1,7 @@
 ﻿using System;
 
-namespace ZohoPeopleClient.TimeTrackerApi
+namespace ZohoPeopleClient.Model.TimeTrackerApi
 {
-    public class TimeLogResponse : ResponseWrapper<TimeLog>
-    {
-    }
-
     public class TimeLog
     {
         public DateTime WorkDate { get; set; }

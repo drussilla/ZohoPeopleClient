@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ZohoPeopleClient.Model.TimeTrackerApi;
+using ZohoPeopleClient.Response;
 
 namespace ZohoPeopleClient.TimeTrackerApi
 {
@@ -33,7 +35,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             "&timeLogId={1}";
 
         //http://people.zoho.com/people/api/timetracker/gettimelogs?authtoken=e456361416f2d38024d1e86c03cd383c&user=ivan.derevyanko%40novility.com&jobId=0&fromDate=2015-07-01&toDate=2015-07-31&billingStatus=all
-        internal TimeLogApi(string token) : base(token) {}
+        internal TimeLogApi(string token, Func<IRestClient> clientFactory) : base(token, clientFactory) { }
 
         public async Task<List<TimeLog>> GetAsync(
             string user,
@@ -42,7 +44,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             string billingStatus = "all",
             string jobId = "all")
         {
-            using (var client = new WebClient())
+            using (var client = RestClient())
             {
                 var request = string.Format(
                     GetRequestUrl,
@@ -52,9 +54,10 @@ namespace ZohoPeopleClient.TimeTrackerApi
                     toDate.ToString("yyyy-MM-dd"),
                     WebUtility.UrlEncode(billingStatus),
                     WebUtility.UrlEncode(jobId));
-                var response = await client.DownloadStringTaskAsync(new Uri(request));
 
-                var timeLogResponse = JsonConvert.DeserializeObject<TimeLogResponse>(response);
+                var response = await client.GetAsync(request);
+
+                var timeLogResponse = JsonConvert.DeserializeObject<ResponseWrapper<TimeLog>>(response);
 
                 return timeLogResponse.Response.Result;
             }
@@ -67,7 +70,7 @@ namespace ZohoPeopleClient.TimeTrackerApi
             TimeSpan hours,
             string billingStatus)
         {
-            using (var client = new WebClient())
+            using (var client = RestClient())
             {
                 var request = string.Format(
                     AddRequestUrl,
@@ -77,9 +80,9 @@ namespace ZohoPeopleClient.TimeTrackerApi
                     WebUtility.UrlEncode(workDate.ToString("yyyy-MM-dd")),
                     WebUtility.UrlEncode(billingStatus),
                     hours.Hours.ToString("D2") + ":" + hours.Minutes.ToString("D2"));
-                var response = await client.UploadStringTaskAsync(request, "POST", "");
+                var response = await client.PostAsync(request);
 
-                var timeLogResponse = JsonConvert.DeserializeObject<TimeLogAddedResponse>(response);
+                var timeLogResponse = JsonConvert.DeserializeObject<ResponseWrapper<TimeLogAdded>>(response);
 
                 return timeLogResponse.Response.Result.First().TimeLogId;
             }
@@ -87,13 +90,13 @@ namespace ZohoPeopleClient.TimeTrackerApi
 
         public async Task<bool> DeleteAsync(string timeLogId)
         {
-            using (var client = new WebClient())
+            using (var client = RestClient())
             {
                 var request = string.Format(
                     DeleteRequestUrl,
                     Token,
                     timeLogId);
-                var response = await client.UploadStringTaskAsync(request, "POST", "");
+                var response = await client.PostAsync(request);
 
                 var responseWrapper = JsonConvert.DeserializeObject<EmptyResponse>(response);
 

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ZohoPeopleClient.Model.TimeTrackerApi;
+using ZohoPeopleClient.Response;
 
 namespace ZohoPeopleClient.TimeTrackerApi.JobsApi
 {
@@ -14,19 +15,19 @@ namespace ZohoPeopleClient.TimeTrackerApi.JobsApi
 
         public async Task<List<Job>> GetAsync()
         {
-            using (var webClient = new WebClient())
+            using (var webClient = RestClient())
             {
                 var request = string.Format(
                     GetRequestUrl,
                     Token);
-                var response = await webClient.DownloadStringTaskAsync(new Uri(request));
+                var response = await webClient.GetAsync(request);
 
-                var jobsResponse = JsonConvert.DeserializeObject<JobsResponse>(response);
+                var jobsResponse = JsonConvert.DeserializeObject<ResponseWrapper<Job>>(response);
 
                 return jobsResponse.Response.Result;
             }
         }
 
-        internal JobsApi(string token) : base(token) {}
+        internal JobsApi(string token, Func<IRestClient> clientFactory) : base(token, clientFactory) { }
     }
 }
