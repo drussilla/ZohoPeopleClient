@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("d2067d9d-c089-4b1e-b77f-0ea9c4530232")]
+[assembly: InternalsVisibleTo("ZohoPeopleClient.UnitTest")]
 
 // Version information for an assembly consists of the following four values:
 //
