@@ -3,7 +3,8 @@
       "message":"Data Fetched Successfully",
       "result":[
          {
-            "totalhours":"777:00",
+            "totalhours": "777:32",
+            "description":"test",
             "fromDate":"2015-01-01",
             "jobId":"261998000000107003",
             "assignees":[

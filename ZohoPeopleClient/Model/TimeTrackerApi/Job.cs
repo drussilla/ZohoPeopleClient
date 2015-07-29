@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using ZohoPeopleClient.JsonConverters;
 
 namespace ZohoPeopleClient.Model.TimeTrackerApi
 {
     public class Job
     {
+        [JsonConverter(typeof(TimeJsonConverter))]
+        public Time TotalHours { get; set; }
         public string JobId { get; set; }
         public string JobName { get; set; }
         public string AssignedBy { get; set; }

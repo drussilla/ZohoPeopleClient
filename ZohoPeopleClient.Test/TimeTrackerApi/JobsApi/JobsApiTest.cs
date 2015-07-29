@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Moq;
 using Xunit;
 
@@ -17,8 +18,13 @@ namespace ZohoPeopleClient.Test.TimeTrackerApi.JobsApi
             var result = await target.GetAsync();
 
             Assert.Equal(2, result.Count);
-            Assert.Equal("Druss", result.First().AssignedBy);
-            Assert.Null(result.First().Description);
+            var first = result.First();
+            Assert.Equal(777, first.TotalHours.Hours);
+            Assert.Equal(32, first.TotalHours.Minutes);
+            Assert.Equal("test", first.Description);
+            Assert.Equal(new DateTime(2015, 01, 01), first.FromDate);
+
+            Assert.Equal("Druss", first.AssignedBy);
         }
     }
 }

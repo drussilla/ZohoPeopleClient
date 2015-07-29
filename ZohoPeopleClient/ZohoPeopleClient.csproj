@@ -45,8 +45,10 @@
     <Compile Include="Infrastructure\ApiBase.cs" />
     <Compile Include="Infrastructure\IRestClient.cs" />
     <Compile Include="Exceptions\ApiLoginErrorException.cs" />
+    <Compile Include="Infrastructure\JsonConverters\TimeJsonConverter.cs" />
     <Compile Include="Infrastructure\RestClient.cs" />
     <Compile Include="IZohoClient.cs" />
+    <Compile Include="Model\Time.cs" />
     <Compile Include="Model\TimeTrackerApi\Assignee.cs" />
     <Compile Include="Model\TimeTrackerApi\Job.cs" />
     <Compile Include="Response\EmptyResponse.cs" />
