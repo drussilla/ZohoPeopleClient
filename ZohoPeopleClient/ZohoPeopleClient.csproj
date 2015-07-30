@@ -48,6 +48,9 @@
     <Compile Include="Infrastructure\JsonConverters\TimeJsonConverter.cs" />
     <Compile Include="Infrastructure\RestClient.cs" />
     <Compile Include="IZohoClient.cs" />
+    <Compile Include="LeaveApi\ILeaveApi.cs" />
+    <Compile Include="LeaveApi\LeaveApi.cs" />
+    <Compile Include="Model\LeaveApi\Holiday.cs" />
     <Compile Include="Model\Time.cs" />
     <Compile Include="Model\TimeTrackerApi\Assignee.cs" />
     <Compile Include="Model\TimeTrackerApi\Job.cs" />

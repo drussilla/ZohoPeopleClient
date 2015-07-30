@@ -1,0 +1,27 @@
+﻿{
+   "response":{
+      "message":"Data fetched successfully",
+      "result":[
+         {
+            "Name":"New Years day",
+            "LocationId":"269998000000066011",
+            "fromDate":"2015-01-01",
+            "LocationName":"HQ Location",
+            "Remarks":"Day off for all employees",
+            "Id":269998000000036029,
+            "toDate":"2015-01-01"
+         },
+         {
+            "Name":"Good Friday",
+            "LocationId":"269998000000066011",
+            "fromDate":"2015-04-03",
+            "LocationName":"HQ Location",
+            "Remarks":"Could be given off.",
+            "Id":269998000000026035,
+            "toDate":"2015-04-03"
+         }         
+      ],
+      "status":0,
+      "uri":"/api/leave/getHolidays"
+   }
+}
