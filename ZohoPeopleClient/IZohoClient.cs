@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using ZohoPeopleClient.LeaveApi;
 using ZohoPeopleClient.TimeTrackerApi;
 
 namespace ZohoPeopleClient
@@ -6,6 +7,8 @@ namespace ZohoPeopleClient
     public interface IZohoClient
     {
         ITimeTrackerApiGroup TimeTracker { get; }
+
+        ILeaveApi Leave { get; }
 
         string GetWebLoginUrl();
 

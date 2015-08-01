@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,16 +27,20 @@ namespace ZohoPeopleClient.ManualTest
             //    new DateTime(2015, 07, 01),
             //    new DateTime(2015, 07, 20)).Result;
 
-            var newLogId = client.TimeTracker.TimeLog.AddAsync(
-                login,
-                new DateTime(2015, 07, 30),
-                "269998000000314115",
-                TimeSpan.FromHours(8),
-                "non-billable").Result;
+            //var newLogId = client.TimeTracker.TimeLog.AddAsync(
+            //    login,
+            //    new DateTime(2015, 07, 30),
+            //    "269998000000314115",
+            //    TimeSpan.FromHours(8),
+            //    "non-billable").Result;
 
-            var isDeleter = client.TimeTracker.TimeLog.DeleteAsync(newLogId).Result;
+            //var isDeleter = client.TimeTracker.TimeLog.DeleteAsync(newLogId).Result;
 
-            Console.WriteLine(newLogId + " " + isDeleter);
+            var holidays = client.Leave.GetHolidaysAsync(login).Result;
+
+            Console.WriteLine(string.Join("\n",
+                holidays.Select(
+                    x => x.Name + " " + x.FromDate.ToString("yyyy-MM-dd" + " -> " + x.ToDate.ToString("yyyy-MM-dd")))));
         }
     }
 }

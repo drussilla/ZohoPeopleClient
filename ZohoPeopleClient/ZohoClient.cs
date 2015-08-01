@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Net;
 using System.Threading.Tasks;
 using ZohoPeopleClient.Exceptions;
+using ZohoPeopleClient.LeaveApi;
 using ZohoPeopleClient.TimeTrackerApi;
 
 namespace ZohoPeopleClient
@@ -36,6 +37,22 @@ namespace ZohoPeopleClient
                 }
 
                 return timeTracker;
+            }
+        }
+
+        private LeaveApi.LeaveApi leaveApi;
+
+        public ILeaveApi Leave
+        {
+            get
+            {
+                if (leaveApi == null)
+                {
+                    throw new InvalidOperationException(
+                        "Client is not logged in. Please use Login methods before calling Api methods");
+                }
+
+                return leaveApi;
             }
         }
 
@@ -75,6 +92,7 @@ namespace ZohoPeopleClient
         private void InitializeApi()
         {
             timeTracker = new TimeTrackerApiGroup(token, defaultClientFactory);
+            leaveApi = new LeaveApi.LeaveApi(token, defaultClientFactory);
         }
 
         private void ParseResult(string response)
