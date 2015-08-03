@@ -7,3 +7,4 @@ ZohoPeopleClient/bin/
 ZohoPeopleClient.ManualTest/bin/
 ZohoPeopleClient.ManualTest/obj/
 *.user
+.vs/
