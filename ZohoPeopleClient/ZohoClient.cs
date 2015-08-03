@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Net;
 using System.Threading.Tasks;
 using ZohoPeopleClient.Exceptions;
+using ZohoPeopleClient.FetchRecordApi;
 using ZohoPeopleClient.LeaveApi;
 using ZohoPeopleClient.TimeTrackerApi;
 
@@ -28,32 +29,19 @@ namespace ZohoPeopleClient
 
         public ITimeTrackerApiGroup TimeTracker
         {
-            get
-            {
-                if (timeTracker == null)
-                {
-                    throw new InvalidOperationException(
-                        "Client is not logged in. Please use Login methods before calling Api methods");
-                }
-
-                return timeTracker;
-            }
+            get { return GetApi(timeTracker); }
         }
 
         private LeaveApi.LeaveApi leaveApi;
 
         public ILeaveApi Leave
         {
-            get
-            {
-                if (leaveApi == null)
-                {
-                    throw new InvalidOperationException(
-                        "Client is not logged in. Please use Login methods before calling Api methods");
-                }
+            get { return GetApi(leaveApi); }
+        }
 
-                return leaveApi;
-            }
+        private FetchRecordApi.FetchRecordApi fetchRecordApi;
+        public IFetchRecordApi FetchRecord {
+            get { return GetApi(fetchRecordApi); }
         }
 
         public string GetWebLoginUrl()
@@ -93,6 +81,18 @@ namespace ZohoPeopleClient
         {
             timeTracker = new TimeTrackerApiGroup(token, defaultClientFactory);
             leaveApi = new LeaveApi.LeaveApi(token, defaultClientFactory);
+            fetchRecordApi = new FetchRecordApi.FetchRecordApi(token, defaultClientFactory);
+        }
+
+        private T GetApi<T>(T api) where T : class
+        {
+            if (api == null)
+            {
+                throw new InvalidOperationException(
+                    "Client is not logged in. Please use Login methods before calling Api methods");
+            }
+
+            return api;
         }
 
         private void ParseResult(string response)

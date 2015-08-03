@@ -36,11 +36,16 @@ namespace ZohoPeopleClient.ManualTest
 
             //var isDeleter = client.TimeTracker.TimeLog.DeleteAsync(newLogId).Result;
 
-            var holidays = client.Leave.GetHolidaysAsync(login).Result;
+            // test holidays
+            //var holidays = client.Leave.GetHolidaysAsync(login).Result;
 
-            Console.WriteLine(string.Join("\n",
-                holidays.Select(
-                    x => x.Name + " " + x.FromDate.ToString("yyyy-MM-dd" + " -> " + x.ToDate.ToString("yyyy-MM-dd")))));
+            //Console.WriteLine(string.Join("\n",
+            //    holidays.Select(
+            //        x => x.Name + " " + x.FromDate.ToString("yyyy-MM-dd" + " -> " + x.ToDate.ToString("yyyy-MM-dd")))));
+
+            // test fetch records
+            var records = client.FetchRecord.GetAsync("P_ApplyLeaveView").Result;
+            Console.WriteLine(records.Count);
         }
     }
 }

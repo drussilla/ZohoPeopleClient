@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FetchRecordApi\FetchRecordApiTest.cs" />
     <Compile Include="FileDataAttribute.cs" />
     <Compile Include="LeaveApi\LeaveApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +67,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="GetHolidays_ValidJson_ResultReturned.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Get_AllParametersIsOk_DynamicObjectReturned.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
