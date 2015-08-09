@@ -16,7 +16,7 @@ namespace ZohoPeopleClient
         private const string ApiModeTokenRequestUrl =
             "https://accounts.zoho.com/apiauthtoken/nb/create?SCOPE=Zohopeople/peopleapi&EMAIL_ID={0}&PASSWORD={1}";
         
-        private const string BrowserModeTokenReuquestUrl =
+        private const string BrowserModeTokenRequestUrl =
             "https://accounts.zoho.com/apiauthtoken/create?SCOPE=zohopeople/peopleapi";
 
         private const string ResponseWrongResultMarker = "RESULT=FALSE";
@@ -26,27 +26,26 @@ namespace ZohoPeopleClient
         private string token;
 
         private TimeTrackerApiGroup timeTracker;
+        private LeaveApi.LeaveApi leaveApi;
+        private FetchRecordApi.FetchRecordApi fetchRecordApi;
 
         public ITimeTrackerApiGroup TimeTracker
         {
             get { return GetApi(timeTracker); }
         }
 
-        private LeaveApi.LeaveApi leaveApi;
-
         public ILeaveApi Leave
         {
             get { return GetApi(leaveApi); }
         }
 
-        private FetchRecordApi.FetchRecordApi fetchRecordApi;
         public IFetchRecordApi FetchRecord {
             get { return GetApi(fetchRecordApi); }
         }
 
         public string GetWebLoginUrl()
         {
-            return BrowserModeTokenReuquestUrl;
+            return BrowserModeTokenRequestUrl;
         }
 
         public void Login(string token)
