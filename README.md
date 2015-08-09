@@ -3,6 +3,12 @@ Web API wrapper for Zoho People
 
 [![Build status](https://ci.appveyor.com/api/projects/status/rsxfde6vkxgfdaby?svg=true)](https://ci.appveyor.com/project/druss/zohopeopleclient)
 
+## The nuget package  [![NuGet Status](https://img.shields.io/nuget/v/ZohoPeopleClient.svg)](https://www.nuget.org/packages/ZohoPeopleClient/)
+
+https://nuget.org/packages/Fody/
+
+    PM> Install-Package ZohoPeopleClient
+
 ## Examples
 
 ### Sign in with login and password
