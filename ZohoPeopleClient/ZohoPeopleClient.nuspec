@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/drussilla/ZohoPeopleClient/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/drussilla/ZohoPeopleClient</projectUrl>
+    <iconUrl>http://druss.co/wp-content/uploads/2015/08/zoho-people-icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# asynchronous client library to interact with the Zoho People API. The client does not fully implement all the API features.</description>
+	<releaseNotes>Supported API: 
+         - TimeLogAPI (Get/Add/Delete)
+         - JobsAPI (Get)
+         - LeaveAPI (GetHolidays)
+         - FetchRecordAPI (Get)</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Zoho api wrapper web people</tags>
+  </metadata>
+</package>

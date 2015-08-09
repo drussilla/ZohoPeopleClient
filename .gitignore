@@ -8,3 +8,4 @@ ZohoPeopleClient.ManualTest/bin/
 ZohoPeopleClient.ManualTest/obj/
 *.user
 .vs/
+NuGetPackages/

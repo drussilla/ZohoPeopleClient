@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ZohoPeopleClient")]
+[assembly: AssemblyTitle("Zoho People Client")]
 [assembly: AssemblyDescription("Web API wrapper for Zoho People")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ivan Derevianko")]
 [assembly: AssemblyProduct("ZohoPeopleClient")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

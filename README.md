@@ -25,7 +25,7 @@ client.Login(token);
 
 ```charp
 var timeLogItems = await client.TimeTracker.TimeLog.GetAsync(
-	login,
+	"testUser@email.com",
     new DateTime(2015, 07, 01),
     new DateTime(2015, 07, 20));
 ```
