@@ -9,3 +9,4 @@ ZohoPeopleClient.ManualTest/obj/
 *.user
 .vs/
 NuGetPackages/
+Releases/

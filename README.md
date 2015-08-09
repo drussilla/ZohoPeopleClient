@@ -1,11 +1,17 @@
 # ZohoPeopleClient
-Web API wrapper for Zoho People
+A C# asynchronous client library to interact with the Zoho People API. The client does not fully implement all the API features.</description>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/rsxfde6vkxgfdaby?svg=true)](https://ci.appveyor.com/project/druss/zohopeopleclient)
+### Supported API: 
+* TimeLogAPI (Get/Add/Delete)
+* JobsAPI (Get)
+* LeaveAPI (GetHolidays)
+* FetchRecordAPI (Get)
+
+## Build [![Build status](https://ci.appveyor.com/api/projects/status/rsxfde6vkxgfdaby?svg=true)](https://ci.appveyor.com/project/druss/zohopeopleclient)
 
 ## The nuget package  [![NuGet Status](https://img.shields.io/nuget/v/ZohoPeopleClient.svg)](https://www.nuget.org/packages/ZohoPeopleClient/)
 
-https://nuget.org/packages/Fody/
+https://nuget.org/packages/ZohoPeopleClient/
 
     PM> Install-Package ZohoPeopleClient
 
