@@ -1,0 +1,1 @@
+D:\Dropbox\tools\nuget\NuGet.exe pack "%~DP0ZohoPeopleClient.csproj" -Properties Configuration=Release -OutputDirectory "%~DP0..\NuGetPackages" -BasePath "%~DP0"
