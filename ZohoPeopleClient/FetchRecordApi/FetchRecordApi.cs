@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ZohoPeopleClient.Response;
 
 namespace ZohoPeopleClient.FetchRecordApi
 {
@@ -11,16 +12,20 @@ namespace ZohoPeopleClient.FetchRecordApi
         {
         }
 
-        private const string GetRecordsRequestUri =
+        private const string GetRecordsByViewRequestUri =
             "https://people.zoho.com/people/api/forms/{1}/records" +
             "?authtoken={0}";
 
-        public async Task<List<dynamic>> GetAsync(string viewName)
+        private const string GetRecordsByFormRequestUri =
+            "https://people.zoho.com/people/api/forms/{1}/getRecords" +
+            "?authtoken={0}";
+
+        public async Task<List<dynamic>> GetByViewAsync(string viewName)
         {
             using (var client = RestClient())
             {
                 var requestUrl = string.Format(
-                    GetRecordsRequestUri,
+                    GetRecordsByViewRequestUri,
                     Token,
                     viewName);
                 var response = await client.GetAsync(requestUrl);
@@ -28,6 +33,22 @@ namespace ZohoPeopleClient.FetchRecordApi
                 var listOfRecords = JsonConvert.DeserializeObject<List<dynamic>>(response);
 
                 return listOfRecords;
+            }
+        }
+
+        public async Task<List<dynamic>> GetByFormAsync(string formName)
+        {
+            using (var client = RestClient())
+            {
+                var requestUrl = string.Format(
+                    GetRecordsByFormRequestUri,
+                    Token,
+                    formName);
+                var response = await client.GetAsync(requestUrl);
+
+                var listOfRecords = JsonConvert.DeserializeObject<ResponseWrapper<dynamic>>(response);
+
+                return listOfRecords.Response.Result;
             }
         }
     }

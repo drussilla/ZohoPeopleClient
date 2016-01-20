@@ -70,10 +70,13 @@
     <None Include="GetAsync_ValidJsonProvided_Result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="GetByForm_AllParametersIsOk_DynamicObjectReturned.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="GetHolidays_ValidJson_ResultReturned.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Get_AllParametersIsOk_DynamicObjectReturned.json">
+    <None Include="GetByView_AllParametersIsOk_DynamicObjectReturned.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

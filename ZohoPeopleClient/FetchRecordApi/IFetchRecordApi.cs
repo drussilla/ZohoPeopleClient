@@ -5,6 +5,8 @@ namespace ZohoPeopleClient.FetchRecordApi
 {
     public interface IFetchRecordApi
     {
-        Task<List<dynamic>> GetAsync(string viewName);
+        Task<List<dynamic>> GetByViewAsync(string viewName);
+
+        Task<List<dynamic>> GetByFormAsync(string formName);
     }
 }

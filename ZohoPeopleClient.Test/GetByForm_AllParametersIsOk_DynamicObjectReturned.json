@@ -1,0 +1,45 @@
+﻿{
+  "response": {
+    "message": "Data fetched successfully",
+    "result": [
+      {
+        "269998000000763011": [
+          {
+            "Leavetype": "Short Leaves 2hmax (specify time below)",
+            "TeamEmailID": "development@novility.com",
+            "Leavetype.ID": 269448000000744401,
+            "DateOfRequest": "19-Jan-2016",
+            "Reasonforleave": "I will have a talk about house on Wednesday morning, so I will be at office around 11:00",
+            "To": "20-Jan-2016",
+            "ApprovalStatus": "Approved",
+            "Daystaken": "2.0",
+            "Employee_ID": "Ivan Derevyanko 17",
+            "Employee_ID.ID": 269911000000052619,
+            "Zoho_ID": 269998000230763011,
+            "From": "20-Jan-2016"
+          }
+        ]
+      },
+      {
+        "269998000000722011": [
+          {
+            "Leavetype": "Holiday",
+            "TeamEmailID": "",
+            "Leavetype.ID": 269998000000069117,
+            "DateOfRequest": "18-Dec-2015",
+            "Reasonforleave": "Winter sport holiday",
+            "To": "11-Mar-2016",
+            "ApprovalStatus": "Pending",
+            "Daystaken": "6.0",
+            "Employee_ID": "Ivan Derevyanko 17",
+            "Employee_ID.ID": 269998000000011619,
+            "Zoho_ID": 269998000023322011,
+            "From": "04-Mar-2016"
+          }
+        ]
+      }
+    ],
+    "status": 0,
+    "uri": "/api/forms/leave/getRecords"
+  }
+}

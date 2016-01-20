@@ -44,7 +44,7 @@ namespace ZohoPeopleClient.ManualTest
             //        x => x.Name + " " + x.FromDate.ToString("yyyy-MM-dd" + " -> " + x.ToDate.ToString("yyyy-MM-dd")))));
 
             // test fetch records
-            var records = client.FetchRecord.GetAsync("P_ApplyLeaveView").Result;
+            var records = client.FetchRecord.GetByFormAsync("leave").Result;
             Console.WriteLine(records.Count);
         }
     }
