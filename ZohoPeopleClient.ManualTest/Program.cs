@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using ZohoPeopleClient.FetchRecordApi;
 
 namespace ZohoPeopleClient.ManualTest
 {
@@ -44,7 +45,7 @@ namespace ZohoPeopleClient.ManualTest
             //        x => x.Name + " " + x.FromDate.ToString("yyyy-MM-dd" + " -> " + x.ToDate.ToString("yyyy-MM-dd")))));
 
             // test fetch records
-            var records = client.FetchRecord.GetByFormAsync("leave").Result;
+            var records = client.FetchRecord.GetByFormAsync("leave", SearchColumn.EMPLOYEEID, "20").Result;
             Console.WriteLine(records.Count);
         }
     }

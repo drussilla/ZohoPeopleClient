@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FetchRecordApi\FetchRecordApi.cs" />
     <Compile Include="FetchRecordApi\IFetchRecordApi.cs" />
+    <Compile Include="FetchRecordApi\SearchColumn.cs" />
     <Compile Include="Infrastructure\ApiBase.cs" />
     <Compile Include="Infrastructure\IRestClient.cs" />
     <Compile Include="Exceptions\ApiLoginErrorException.cs" />
