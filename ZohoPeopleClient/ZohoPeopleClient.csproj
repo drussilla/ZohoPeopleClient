@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\TimeSpanConverter.cs" />
     <Compile Include="FetchRecordApi\FetchRecordApi.cs" />
     <Compile Include="FetchRecordApi\IFetchRecordApi.cs" />
     <Compile Include="FetchRecordApi\SearchColumn.cs" />

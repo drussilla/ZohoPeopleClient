@@ -65,8 +65,12 @@
     <Compile Include="LeaveApi\LeaveApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeTrackerApi\JobsApi\JobsApiTest.cs" />
+    <Compile Include="TimeTrackerApi\TimeLogApi\TimeLogApiTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="TimeLogApiGetASync_ValidJsonProvided_Result.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="GetAsync_ValidJsonProvided_Result.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

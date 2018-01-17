@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using ZohoPeopleClient.Converters;
 
 namespace ZohoPeopleClient.Model.TimeTrackerApi
 {
@@ -7,6 +9,8 @@ namespace ZohoPeopleClient.Model.TimeTrackerApi
         public DateTime WorkDate { get; set; }
         public string JobId { get; set; }
         public string Erecno { get; set; }
+
+        [JsonConverter(typeof(TimeSpanConverter))]
         public TimeSpan Hours { get; set; }
 
         /// <summary>
