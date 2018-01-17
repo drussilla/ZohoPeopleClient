@@ -10,6 +10,6 @@ assembly_info:
 cache:
   - packages -> **\packages.config
 before_build:
-- nuget restore
+- cmd: nuget restore
 build:
   verbosity: minimal
